@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /* inherited from body */
+}
+
+html {
+    /* for all sizes in rem (not before IE9) units to change */
+    /* percentage for the user's browser preferences zoom/font-size to work  */
+    font-size: 62.5%; /* default is 16px=100% */
+}
+
+body {
+    box-sizing: border-box;    
+}

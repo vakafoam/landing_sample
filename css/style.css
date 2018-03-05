@@ -32,21 +32,18 @@ body {
   /* for the logo positioning*/
   /* cropping back by a polygon */
   clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -55,29 +52,27 @@ body {
   backface-visibility: hidden;
   /* removes the tiny up-shift after animation */
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  /* in one separate line*/
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /* slows down at the end*/
-  /* 
-    animation-delay: 1s; 
-    animation-iteration-count: 3;
-    */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out;
-  /* all in 1 line */ }
+  .heading-primary--main {
+    display: block;
+    /* in one separate line*/
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* slows down at the end*/
+    /* 
+        animation-delay: 1s; 
+        animation-iteration-count: 3;
+        */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+    /* all in 1 line */ }
 
 @keyframes moveInLeft {
   0% {
@@ -108,53 +103,46 @@ body {
     transform: translate(0); } }
 
 /* button as an inline text element*/
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.6rem 4rem;
-  display: inline-block;
-  /*makes the paddings not overlap the other elements*/
-  border-radius: 10rem;
-  transition: all .2s;
-  /* apply animated transitions to all state changes */
-  position: relative;
-  /* for absolute positioning of the ::after element */
-  /* font-size: 1.6rem; */ }
-
-.btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: white;
-  color: #777; }
-
-/* Around-button effect */
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s; }
-
-.btn--white::after {
-  background-color: white; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-.btn--animated {
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards;
-  /* applies 0% animation styles (invisible) before starting animation */ }
+.btn {
+  /* Around-button effect */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.6rem 4rem;
+    display: inline-block;
+    /*makes the paddings not overlap the other elements*/
+    border-radius: 10rem;
+    transition: all .2s;
+    /* apply animated transitions to all state changes */
+    position: relative;
+    /* for absolute positioning of the ::after element */
+    /* font-size: 1.6rem; */ }
+  .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: white;
+    color: #777; }
+    .btn--white::after {
+      background-color: white; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+    /* applies 0% animation styles (invisible) before starting animation */ }
