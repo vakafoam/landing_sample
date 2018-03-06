@@ -5,7 +5,8 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 var SOURCEPATHS = {
-    sassSource: 'sass/main.scss'
+    sassMainSource: 'sass/main.scss',
+    sassSource: 'sass/**/*.scss',
 }
 
 var APPPATH = {
@@ -37,4 +38,8 @@ gulp.task('serve', ['sass'], function() {
         })
 });
 
-gulp.task('default', ['serve']);
+gulp.task('watch', ['serve'], function() {
+    gulp.watch([SOURCEPATHS.sassSource], ['sass']);
+});
+
+gulp.task('default', ['watch']);
