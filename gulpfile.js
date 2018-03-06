@@ -1,13 +1,24 @@
 var gulp = require('gulp');
 var shell = require('gulp-shell');
 var sass = require('gulp-sass');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
+
+var SOURCEPATHS = {
+    sassSource: 'sass/main.scss'
+}
+
+var APPPATH = {
+    root: './',
+    css: 'css',
+    js: './js'
+}
 
 gulp.task ('sass', function() {
-    return gulp.src('sass/main.scss')
+    return gulp.src(SOURCEPATHS.sassSource)
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest(APPPATH.css));
 });
-
 
 // gulp.task ('sass_shell', shell.task([
 //     'echo',
@@ -17,4 +28,13 @@ gulp.task ('sass', function() {
 //     'echo'
 // ]));
 
-gulp.task('default', ['sass']);
+gulp.task('serve', ['sass'], function() {
+    browserSync.init([APPPATH.css + '/*.css', APPPATH.root + '*.html',
+        APPPATH.js + '/*.js'], {
+            server: {
+                baseDir: APPPATH.root
+            }
+        })
+});
+
+gulp.task('default', ['serve']);
